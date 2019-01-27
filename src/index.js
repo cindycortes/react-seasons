@@ -9,16 +9,17 @@ class App extends React.Component {
         // to this.state. When we want to update, we use setState
         this.state = { lat: null, errorMessage: '' };
 
+    }
+
+    componentDidMount() {
+
         window.navigator.geolocation.getCurrentPosition(
-            position => {
-                // we called setstate!!
-                this.setState({ lat: position.coords.latitude });
-            },
-            (err) => {
-                this.setState({ errorMessage: err.message });
-            }
+            position => this.setState({ lat: position.coords.latitude }),
+            (err) => this.setState({ errorMessage: err.message })
         );
     }
+
+
 
     render() { // method
 
@@ -35,4 +36,5 @@ class App extends React.Component {
     }
 }
 
-ReactDOM.render(<App />, document.querySelector('#root')); 
+ReactDOM.render(<App />, document.querySelector('#root'));
+
