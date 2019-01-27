@@ -5,16 +5,21 @@ class App extends React.Component {
     constructor(props) {
         super(props); // need to use this every time we use a constructor
         
+        // this is the only time we do direct assignment 
+        // to this.state. When we want to update, we use setState
         this.state = { lat: null };
     
+        window.navigator.geolocation.getCurrentPosition(
+            position => {
+                // we called setstate!!
+                this.setState({ lat: position.coords.latitude });
+            }, 
+            (err) => console.log(err)
+        );
     }
     
     render () { // method
-        window.navigator.geolocation.getCurrentPosition(
-            (position) => console.log(position), // success callback
-            (err) => console.log(err)
-        );
-        return <div>Latitude: </div>;
+        return <div>Latitude: {this.state.lat} </div>;
     }
 }
 
