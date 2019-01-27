@@ -3,3 +3,7 @@ Component Lifecycle:
 componentDidMount() - will be called once, good place to do data-loading. 
 componentDidUpdate() - can be called anytime, more data loading when state/props change
 componentWillUnmount() - clean up
+
+                        // prop = value
+            // property from the state of the app component and passing it as a prop down into the season display
+            // can take a state from one component and pass it down as a prop to the child
