@@ -24,12 +24,9 @@ class App extends React.Component {
 
         if (!this.state.errorMessage && this.state.lat) {
             return <SeasonDisplay lat={this.state.lat} /> 
-                                    // prop = value
-            // property from the state of the app component and passing it as a prop down into the season display
-            // can take a state from one component and pass it down as a prop to the child
         }
 
-        return <Spinner />;
+        return <Spinner message="Please accept location request" />;
 
     }
 }
