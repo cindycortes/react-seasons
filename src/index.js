@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import SeasonDisplay from './SeasonDisplay';
+import Spinner from './Spinner';
+
 
 class App extends React.Component {
 
@@ -27,7 +29,7 @@ class App extends React.Component {
             // can take a state from one component and pass it down as a prop to the child
         }
 
-        return <div>Loading! </div>;
+        return <Spinner />;
 
     }
 }
